@@ -1,0 +1,6 @@
+﻿.next
+node_modules
+.env*
+!.env.local.example
+npm-debug.log*
+yarn-error.log*

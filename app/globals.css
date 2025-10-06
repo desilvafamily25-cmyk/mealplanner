@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ================================
+   Dark Theme Vars
+================================== */
+:root {
+  color-scheme: dark;
+
+  /* Accent: indigo (darker) */
+  --accent-600: #4f46e5; /* hover */
+  --accent-700: #4338ca; /* main */
+  --accent-800: #3730a3; /* darkest */
+
+  /* Surfaces */
+  --bg:        #0f172a; /* slate-900 */
+  --panel:     #1f2937; /* gray-800 */
+  --panel-2:   #111827; /* gray-900 (alt) */
+
+  /* Borders & text */
+  --border:    #334155; /* slate-700 */
+  --border-2:  #1f2937; /* gray-800 */
+  --text:      #e5e7eb; /* gray-200 */
+  --muted:     #9ca3af; /* gray-400 */
+
+  /* Badge tint */
+  --badge-bg:  rgba(67, 56, 202, 0.18); /* accent-700 @ ~18% */
+  --badge-tx:  #c7d2fe; /* indigo-200 */
+}
+
+/* ================================
+   Base
+================================== */
+body {
+  @apply text-base;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container { @apply max-w-5xl mx-auto px-4; }
+
+/* ================================
+   Cards / Panels
+================================== */
+.card {
+  @apply rounded-2xl shadow-sm p-5 border;
+  background: var(--panel);
+  border-color: var(--border);
+}
+
+/* Optional: strong left accent border on cards */
+.card-accent {
+  border-left-width: 4px;
+  border-left-color: var(--accent-800);
+}
+
+/* Global strong border helper */
+.border-strong { border-color: var(--accent-800) !important; }
+
+/* ================================
+   Buttons
+================================== */
+.btn {
+  @apply inline-flex items-center justify-center rounded-xl px-4 py-2 select-none transition;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+.btn:hover { background: rgba(255, 255, 255, 0.04); }
+
+.btn-primary {
+  color: white;
+  background: var(--accent-700);
+  border-color: var(--accent-700);
+}
+.btn-primary:hover { background: var(--accent-600); }
+
+/* ================================
+   Badges
+================================== */
+.badge {
+  @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium mr-1;
+  background: var(--badge-bg);
+  color: var(--badge-tx);
+}
+
+/* Optional: slot-specific badges (use in markup if you like)
+.badge-dinner { background: rgba(244, 63, 94, 0.15); color: #fecdd3; }  // rose tint
+.badge-lunch  { background: rgba(56, 189, 248, 0.18); color: #bae6fd; }  // sky tint
+*/
+
+/* ================================
+   Form elements (so inputs look good in dark)
+================================== */
+input, select, textarea {
+  @apply rounded-xl px-3 py-2 outline-none;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+input:focus, select:focus, textarea:focus {
+  border-color: var(--accent-700);
+  box-shadow: 0 0 0 3px rgba(67, 56, 202, 0.25);
+}
+
+/* List items inside pickers feel clickable */
+button.list-row {
+  @apply w-full text-left px-3 py-2 rounded-lg transition;
+  background: transparent;
+}
+button.list-row:hover { background: rgba(255,255,255,0.06); }
+
+/* ================================
+   Headings
+================================== */
+h1 { @apply text-2xl font-semibold mb-4; }
+h2 { @apply text-xl font-semibold mb-3; }
