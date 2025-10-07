@@ -9,14 +9,14 @@
   color-scheme: dark;
 
   /* Accent: indigo (darker) */
-  --accent-600: #4f46e5; /* hover */
+  --accent-600: #4b4885; /* hover */
   --accent-700: #4338ca; /* main */
   --accent-800: #3730a3; /* darkest */
 
   /* Surfaces */
-  --bg:        #0f172a; /* slate-900 */
-  --panel:     #1f2937; /* gray-800 */
-  --panel-2:   #111827; /* gray-900 (alt) */
+  --bg:        #15398b; /* slate-900 */
+  --panel:     #283c58; /* gray-800 */
+  --panel-2:   #303f5f; /* gray-900 (alt) */
 
   /* Borders & text */
   --border:    #334155; /* slate-700 */
@@ -25,7 +25,7 @@
   --muted:     #9ca3af; /* gray-400 */
 
   /* Badge tint */
-  --badge-bg:  rgba(67, 56, 202, 0.18); /* accent-700 @ ~18% */
+  --badge-bg:  rgba(64, 56, 151, 0.18); /* accent-700 @ ~18% */
   --badge-tx:  #c7d2fe; /* indigo-200 */
 }
 

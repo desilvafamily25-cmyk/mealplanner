@@ -1,6 +1,7 @@
-'use client';
+﻿'use client';
 import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase/client';
+import AuthBanner from '@/components/AuthBanner';
 
 type LC = { id: string; name: string; tags: string[] | null };
 
@@ -13,6 +14,7 @@ export default function LunchPage() {
   return (
     <div className="card">
       <h1>School lunch mains</h1>
+      <AuthBanner />
       <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {rows.map(r => (
           <li key={r.id} className="border rounded-xl p-4">
